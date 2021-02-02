@@ -1,5 +1,5 @@
 {
-  "name": "@fluentui-site/react-monaco-editor",
+  "name": "@fluentui/react-monaco-editor",
   "version": "1.0.0-beta.38",
   "description": "Live tsx editor for Fabric website.",
   "main": "lib-commonjs/index.js",
