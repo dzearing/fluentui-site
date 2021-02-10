@@ -1,7 +1,5 @@
 import * as React from 'react';
 import { INavPage, LoadingComponent } from '@fluentui/react-docsite-components/lib/index2';
-import { ControlsAreaPage } from '../../../pages/Controls/ControlsAreaPage';
-import { IPageJson } from '@fluentui/react-internal/lib/common/DocPage.types';
 
 export type CategoryPage = Partial<Omit<INavPage, 'pages'>> & { subPages?: ICategory };
 
@@ -231,7 +229,7 @@ function generateCategories() {
   }
 
   // Add reference pages
-  pagesByCategory.References = _loadReferences();
+  // pagesByCategory.References = _loadReferences();
 
   // Convert the categories to an array (filter out empty categories)
   return categoryNames
@@ -257,24 +255,6 @@ function _generatePage(
     getComponent: cb => requireContext(pagePath).then((mod: any) => cb(mod[componentName + 'Page'])),
     ...nonUrlOverrides,
   };
-}
-
-function _loadReferences(): INavPage[] {
-  const requireContext = require.context('@fluentui/api-docs/lib/pages/references', false, /\w+\.page\.json$/, 'lazy');
-
-  return requireContext.keys().map(pagePath => {
-    const pageName = pagePath.match(/(\w+)\.page\.json/)![1];
-    return {
-      title: pageName,
-      url: '#/controls/web/references/' + pageName.toLowerCase(),
-      isFilterable: true,
-      component: () => <LoadingComponent title={pageName} />,
-      getComponent: cb =>
-        requireContext(pagePath).then((jsonDocs: IPageJson) => {
-          cb(() => <ControlsAreaPage jsonDocs={jsonDocs} title={pageName} hideImplementationTitle />);
-        }),
-    };
-  });
 }
 
 export const controlsPagesWeb: INavPage[] = [
