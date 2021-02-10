@@ -2,7 +2,7 @@
 
 const resources = require('../../scripts/webpack/webpack-resources');
 const webpack = require('webpack');
-const { remoteExternal } = require('@lading/webpack');
+//const { remoteExternal } = require('@lading/webpack');
 //const getResolveAlias = require('../../scripts/webpack/getResolveAlias');
 const { addMonacoWebpackConfig } = require('@fluentui/react-monaco-editor/scripts/addMonacoWebpackConfig');
 
@@ -36,15 +36,15 @@ module.exports = resources.createServeConfig(
           argv: [],
         }),
       }),
-      new webpack.container.ModuleFederationPlugin({
-        remotes: {
-          '@fluentui/react': remoteExternal('fluentuiReact'),
-        },
-        shared: {
-          react: { singleton: true },
-          'react-dom': { singleton: true },
-        },
-      }),
+      // new webpack.container.ModuleFederationPlugin({
+      //   remotes: {
+      //     '@fluentui/react': remoteExternal('fluentuiReact'),
+      //   },
+      //   shared: {
+      //     react: { singleton: true },
+      //     'react-dom': { singleton: true },
+      //   },
+      // }),
     ],
 
     resolve: {

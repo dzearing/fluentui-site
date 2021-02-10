@@ -1,13 +1,6 @@
 import * as React from 'react';
 import { INavPage, LoadingComponent } from '@fluentui/react-docsite-components/lib/index2';
-import {
-  controlsPagesWeb,
-  controlsPagesIos,
-  controlsPagesAndroid,
-  controlsPagesMac,
-  controlsPagesWindows,
-  controlsPagesCrossPlatform,
-} from './index';
+import { controlsPagesWeb } from './index';
 
 export const ControlsPages: INavPage = {
   title: 'Controls',
@@ -21,10 +14,5 @@ export const ControlsPages: INavPage = {
     require.ensure([], require => cb(require<any>('../../../pages/Overviews/ControlsPage/ControlsPage').ControlsPage)),
   platforms: {
     web: controlsPagesWeb,
-    ios: controlsPagesIos,
-    android: controlsPagesAndroid,
-    mac: controlsPagesMac,
-    windows: controlsPagesWindows,
-    cross: controlsPagesCrossPlatform,
   },
 };
