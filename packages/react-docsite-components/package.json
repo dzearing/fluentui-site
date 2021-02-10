@@ -1,5 +1,5 @@
 {
-  "name": "@fluentui-site/react-docsite-components",
+  "name": "@fluentui/react-docsite-components",
   "version": "8.0.0-beta.39",
   "description": "Fluent UI React components for building documentation sites.",
   "main": "lib-commonjs/index.js",
