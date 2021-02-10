@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ISiteDefinition, LoadingComponent } from '@fluentui/react-docsite-components/lib/index2';
-import { ControlsPages, ResourcesPages, StylesPages, GetStartedPages } from './SiteDefinition.pages/index';
+// import { ControlsPages, ResourcesPages, StylesPages, GetStartedPages } from './SiteDefinition.pages/index';
 import { Platforms } from '../interfaces/Platforms';
 import { platforms } from './SiteDefinition.platforms';
 
@@ -10,36 +10,36 @@ export const SiteDefinition: ISiteDefinition<Platforms> = {
     'https://static2.sharepointonline.com/files/fabric/fabric-website/images/microsoftfluentui-logo-rgb_no-padding.svg',
   platforms,
   pages: [
-    {
-      title: 'Fluent UI',
-      url: '#/',
-      className: 'fabricPage',
-      isHomePage: true,
-      isUhfLink: true,
-      isContentFullBleed: true,
-      component: () => <LoadingComponent title="Welcome to Fluent UI" />,
-      getComponent: cb => require.ensure([], require => cb(require<any>('../pages/HomePage/HomePage').HomePage)),
-    },
-    GetStartedPages,
-    StylesPages,
-    ControlsPages,
-    ResourcesPages,
-    {
-      title: 'Demo Loading Page',
-      url: '#/ms-loading',
-      isHiddenFromMainNav: true,
-      component: () => <LoadingComponent title="Demo Loading Page" />,
-    },
-    {
-      title: 'Template Page',
-      url: '#/ms-page-template',
-      isHiddenFromMainNav: true,
-      component: () => <LoadingComponent title="Template Page" />,
-      getComponent: cb =>
-        require.ensure([], require =>
-          cb(require<any>('../pages/PageTemplates/TemplatePage/TemplatePage').TemplatePage),
-        ),
-    },
+    // {
+    //   title: 'Fluent UI',
+    //   url: '#/',
+    //   className: 'fabricPage',
+    //   isHomePage: true,
+    //   isUhfLink: true,
+    //   isContentFullBleed: true,
+    //   component: () => <LoadingComponent title="Welcome to Fluent UI" />,
+    //   getComponent: cb => require.ensure([], require => cb(require<any>('../pages/HomePage/HomePage').HomePage)),
+    // },
+    // GetStartedPages,
+    // StylesPages,
+    // ControlsPages,
+    // ResourcesPages,
+    // {
+    //   title: 'Demo Loading Page',
+    //   url: '#/ms-loading',
+    //   isHiddenFromMainNav: true,
+    //   component: () => <LoadingComponent title="Demo Loading Page" />,
+    // },
+    // {
+    //   title: 'Template Page',
+    //   url: '#/ms-page-template',
+    //   isHiddenFromMainNav: true,
+    //   component: () => <LoadingComponent title="Template Page" />,
+    //   getComponent: cb =>
+    //     require.ensure([], require =>
+    //       cb(require<any>('../pages/PageTemplates/TemplatePage/TemplatePage').TemplatePage),
+    //     ),
+    // },
   ],
   redirects: [
     { from: '#/customizations/', to: '#/controls/web/customizations/' },
